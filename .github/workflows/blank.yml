@@ -19,14 +19,11 @@ jobs:
           VERCEL_PROJECT_ID: prj_dKW3xqAK2X1c0La0oECdCaM6jERp
         run: |
           # Define your environment variables
-          ENV_VARIABLES='[
-            {"key":"TEST","value":"new_value1"},
-            
-          ]'
+       
 
           # Update environment variables in Vercel
-          curl -X PATCH "https://api.vercel.com/v8/projects/prj_dKW3xqAK2X1c0La0oECdCaM6jERp/env" \
-          -H "Authorization: Bearer ndvdUdQr6LQNx4aSuSs0iTm1" \
+          curl -X PATCH "https://api.vercel.com/v9/projects/prj_dKW3xqAK2X1c0La0oECdCaM6jERp/env/y9JTcVZONBPRLi38" \
+          -H "Authorization: Bearer Sex8QHFr4mVMPh3Cypf3r5Jf" \\
           -H "Content-Type: application/json" \
-          -d "$ENV_VARIABLES"
+          -d '{"value":"value2222"}
 
