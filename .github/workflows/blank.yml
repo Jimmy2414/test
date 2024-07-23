@@ -25,5 +25,5 @@ jobs:
           curl -X PATCH "https://api.vercel.com/v9/projects/prj_dKW3xqAK2X1c0La0oECdCaM6jERp/env/y9JTcVZONBPRLi38" \
           -H "Authorization: Bearer Sex8QHFr4mVMPh3Cypf3r5Jf" \\
           -H "Content-Type: application/json" \
-          -d '{"value":"value2222"}'
+          -d "{"value":"value2222"}"
 
