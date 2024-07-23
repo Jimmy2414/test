@@ -1,30 +1,32 @@
-name: CI
+name: Update Vercel Environment Variables
 
 on:
   push:
-    branches: ['main']
-  pull_request:
-    branches: ['main']
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  build:
+  update-vercel-env:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Create a JavaScript file
-        run: |
-          echo "console.log('Hello, world!');" > hello.js
-
-      - name: Commit and push changes
+      - name: Update Vercel Environment Variables
         env:
-          PAT: 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
+          VERCEL_TOKEN: ndvdUdQr6LQNx4aSuSs0iTm1
+          VERCEL_PROJECT_ID: version-webapp
         run: |
-          git config --global user.name 'jimmy2414'
-          git config --global user.email 'juanignaciomunozok@gmail.com'
-          git add hello.js
-          git commit -m "Add hello.js with console log"
-          git remote set-url origin https://x-access-token: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@github.com/Jimmy2414/test2.git
-          git push origin main
+          # Define your environment variables
+          ENV_VARIABLES='[
+            {"key":"TEST","value":"new_value1"},
+            
+          ]'
+
+          # Update environment variables in Vercel
+          curl -X PATCH "https://api.vercel.com/v8/projects/version-webapp/env" \
+          -H "Authorization: Bearer ndvdUdQr6LQNx4aSuSs0iTm1" \
+          -H "Content-Type: application/json" \
+          -d "$ENV_VARIABLES"
 
