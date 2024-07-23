@@ -16,7 +16,7 @@ jobs:
       - name: Update Vercel Environment Variables
         env:
           VERCEL_TOKEN: ndvdUdQr6LQNx4aSuSs0iTm1
-          VERCEL_PROJECT_ID: version-webapp
+          VERCEL_PROJECT_ID: prj_dKW3xqAK2X1c0La0oECdCaM6jERp
         run: |
           # Define your environment variables
           ENV_VARIABLES='[
