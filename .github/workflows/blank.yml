@@ -21,8 +21,8 @@ jobs:
         env:
           PAT: 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
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'jimmy2414'
+          git config --global user.email 'juanignaciomunozok@gmail.com'
           git add hello.js
           git commit -m "Add hello.js with console log"
           git remote set-url origin https://x-access-token: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@github.com/Jimmy2414/test2.git
