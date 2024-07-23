@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create a JavaScript file
+        run: |
+          echo "console.log('Hello, world!');" > hello.js
+
+      - name: Commit and push changes
+        env:
+          PAT: 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
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add hello.js
+          git commit -m "Add hello.js with console log"
+          git remote set-url origin https://x-access-token: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@github.com/Jimmy2414/test2.git
+          git push origin main
+
