@@ -25,7 +25,7 @@ jobs:
           echo "Version extracted: ${{ secrets.VERCEL_TOKEN }}" 
           # Update environment variables in Vercel
           curl -X PATCH "https://api.vercel.com/v9/projects/prj_dKW3xqAK2X1c0La0oECdCaM6jERp/env/y9JTcVZONBPRLi38" \
-          -H "Authorization: Bearer ${{ secrets.VERCEL_PROJECT_ID }}" \
+          -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
           -H "Content-Type: application/json" \
           -d '{"value":"4.3.0"}'
 
