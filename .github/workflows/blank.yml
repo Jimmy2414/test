@@ -35,7 +35,7 @@ jobs:
           -d '{
            "comment": "Actualización de la variable VERSION_APP",
            "key": "VERSION_APP",
-           "value": "4.3.0",
+           "value": "'"${VERSION}"'",
            "target": ["development", "preview", "production"],
            "type": "encrypted"
               }'
