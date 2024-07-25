@@ -29,3 +29,13 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{"value":"4.3.0"}'
 
+          curl -X PATCH "https://api.vercel.com/v9/projects/prj_mSqQsxfecY1FefdAWp07a4prLX3r/env/GoXbRxlXMC606ApS?teamId=team_Nm0l2BsKw825BSO1TBKHrNe1" \
+          -H "Authorization: Bearer oDybZz6ikdaZdapNUCelmuGy" \
+          -H "Content-Type: application/json" \
+          -d '{
+           "comment": "Actualización de la variable VERSION_APP",
+           "key": "VERSION_APP",
+           "value": "4.3.0",
+           "target": ["development", "preview", "production"],
+           "type": "encrypted"
+              }'
